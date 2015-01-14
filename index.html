@@ -4,19 +4,29 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script scr="bootstrap.min.js"></script>
 	<script src="jquery-1.11.2.min.js"></script>
 	<script src="util.js"></script>
 </head>
 <body>
-
-Usuario <input  value="freedomsponsors" type="text" id="user">
-Repositório <input value="www.freedomsponsors.org" type="text" id="reponame">
-<button  onclick="vaibuscarasissues()">Vai buscar as issues</button>
-
-<table id="issuestable">
-    <tr><th>Numero</th><th>Titulo</th>
-</table>
+	<div class="container">
+		<fieldset >
 
 
-</body>
-</html>
+		<div class="form-inline">
+			<legend>Tarefas A e B</legend>
+			<label class="control-label" for="user">Usuario</label>  <input  value="freedomsponsors" type="text" id="user">
+			<label class="control-label" for="reponame">Repositório</label> <input value="www.freedomsponsors.org" type="text" id="reponame">
+			<button  class="btn btn-primary" onclick="vaibuscarasissues()">Vai buscar as issues</button>
+		</div>
+		<br>
+			<table id="issuestable" class="table table-hover">
+				<tr><th>Numero</th><th>Titulo</th>
+			</table>
+
+
+			</fieldset>
+		</div>
+	</body>
+	</html>
