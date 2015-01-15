@@ -8,10 +8,9 @@ function vaibuscarasissues(){
 								tabela = result;
 						});
 				},
-					'popula_tabela': function(issuestable){
-						console.log("2222");
+					'popula_tabela': function(idTabela){
 							for (var i = 0; i < tabela.length; i++) {
-							$("#issuestable").append(
+							$(idTabela).append(
 												"<tr>" +
 												"    <th>" + tabela[i]["number"] + "</th>" +
 												"    <th>" + tabela[i]["title"] + "</th>" +
