@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<script src="js/angular.min.js"></script>
+		<script src="js/util3.js"></script>
+		<script scr="js/bootstrap.min.js"></script>
+
+	</head>
+	<body ng-app="myapp" ng-controller="MyCtrl">
+		<div class="container">
+			<div class=" span12">
+					<div class="form-horizontal">
+						<legend>Tarefas 2  </legend>
+						<h3> Matriz {{ct.linhas}}  x {{ct.colunas}}</h3>
+						<div class="span3">
+							<label class="control-label">Linhas</label>  
+							<input ng-change="ct.montaMatriz()" class="form-control" id="lines" type="number" ng-model="ct.linhas">
+						</div>
+						<div class="span1">X</div>
+						<div class="span3">
+							<label class="control-label">Colunas</label> 
+							<input value="" ng-model="ct.colunas" type="number" ng-change="ct.montaMatriz()">
+						</div>
+						<div class="span4">
+							<button  class="btn btn-primary" >go!</button>
+						</div>
+					</div>
+					<div class="span12">
+					<br>
+						<table class="table table-bordered">
+							<tbody>
+							<tr ng-repeat="linha in ct.matrix">
+								<td ng-repeat="cell in linha" ng-class="{error: ct.matrix[cell.linha][cell.coluna].value}" ng-click="ct.toggle_alive(cell)">
+								<div style="height:20%; width:20%;">L:{{cell.linha}} C:{{cell.coluna}} Estado: {{ct.matrix[cell.linha][cell.coluna].value}}</div>
+							</tr>
+							</tbody>
+						</table>
+
+					</div>
+			</div>
+		</div>
+	</body>
+</html>
